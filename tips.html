@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AccessoryHub | Tips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      scroll-behavior: smooth;
+      background: #f4f4f4;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at top, #3a2c00, #000 65%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://www.transparenttextures.com/patterns/stardust.png");
+      opacity: 0.25;
+    }
+
+    .hero h1 {
+      text-shadow: 0 0 25px rgba(255, 210, 0, 0.6);
+    }
+
+    /* CARDS */
+    .card {
+      border: none;
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      transition: all 0.5s ease;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 22px;
+      padding: 2px;
+      background: linear-gradient(120deg, transparent, #ffd200, transparent);
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) translateY(-14px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.12);
+    }
+
+    /* BUTTON */
+    .btn-gradient {
+      background: linear-gradient(45deg, #f7971e, #ffd200);
+      color: #000;
+      border: none;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gradient::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 60%);
+      transform: scale(0);
+      transition: 0.5s;
+    }
+
+    .btn-gradient:hover::after {
+      transform: scale(1);
+    }
+
+    /* QUALITY STRIP */
+    .quality-strip {
+      background: linear-gradient(90deg, #f7971e, #ffd200, #f7971e);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* ICON ANIMATION */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .bi-star,
+    .bi-truck,
+    .bi-shield-check {
+      animation: pulse 2.5s infinite;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(120deg, #000, #1a1a1a, #000);
+      box-shadow: inset 0 10px 30px rgba(255, 210, 0, 0.15);
+    }
+
+    /* CURSOR GLOW */
+    #cursor-glow {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, rgba(255, 210, 0, 0.4), transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">AccessoryHub</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero text-white text-center py-5 mt-5">
+    <div class="container position-relative">
+      <h1 class="fw-bold display-5">Accessory Tips & Style Guides</h1>
+      <p class="text-warning fs-5">Accessorize like a luxury fashion pro</p>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="text-center my-5">
+    <span style="display:inline-block;width:120px;height:4px;background:linear-gradient(90deg,#ffd200,#f7971e);border-radius:50px;"></span>
+  </div>
+
+  <!-- CARDS -->
+  <section class="container py-4">
+    <div class="row g-4">
+
+      <div class="col-md-6">
+        <div class="card">
+          <img src="images/luxurywatch.png">
+          <div class="position-absolute top-0 end-0 bg-dark text-warning px-3 py-1 rounded-bottom">
+            <i class="bi bi-clock"></i> 3 min read
+          </div>
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">Trending</span>
+            <h5 class="fw-bold">Top 5 Watches for Business</h5>
+            <p class="text-muted">Choose a watch that defines confidence and class.</p>
+            <a href="#" class="btn btn-gradient btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <img src="images/bag1.jfif">
+          <div class="position-absolute top-0 end-0 bg-dark text-warning px-3 py-1 rounded-bottom">
+            <i class="bi bi-clock"></i> 4 min read
+          </div>
+          <div class="card-body">
+            <span class="badge bg-danger mb-2">Hot</span>
+            <h5 class="fw-bold">Bag Styles for Every Occasion</h5>
+            <p class="text-muted">Office, travel, or weekend — choose right.</p>
+            <a href="#" class="btn btn-gradient btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <img src="images/glasses1.jfif">
+          <div class="position-absolute top-0 end-0 bg-dark text-warning px-3 py-1 rounded-bottom">
+            <i class="bi bi-clock"></i> 2 min read
+          </div>
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">New</span>
+            <h5 class="fw-bold">Sunglasses Trends 2026</h5>
+            <p class="text-muted">Stay sharp with next-gen shades.</p>
+            <a href="#" class="btn btn-gradient btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <img src="images/shoulderbag.png">
+          <div class="position-absolute top-0 end-0 bg-dark text-warning px-3 py-1 rounded-bottom">
+            <i class="bi bi-clock"></i> 5 min read
+          </div>
+          <div class="card-body">
+            <span class="badge bg-success mb-2">Popular</span>
+            <h5 class="fw-bold">Accessorize Your Outfit</h5>
+            <p class="text-muted">Small details, massive impact.</p>
+            <a href="#" class="btn btn-gradient btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+ <section class="quality-strip text-white text-center py-4">
+    <h5 class="mb-0">✔ Quality Guaranteed &nbsp; ✔ Secure Payments &nbsp; ✔ Fast Delivery</h5>
+  </section>
+
+  <!-- ABOUT & CONTACT -->
+  <section class="row bg-dark text-light p-5 m-0">
+    <div class="col-md-4">
+      <h4>About Us</h4>
+      <p>AccessoryHub is a trusted company offering premium-quality accessories at affordable prices.</p>
+      <div class="row text-center mt-3">
+        <div class="col"><i class="bi bi-truck fs-1 text-warning"></i><h6>Fast Delivery</h6></div>
+        <div class="col"><i class="bi bi-shield-check fs-1 text-warning"></i><h6>Secure Payment</h6></div>
+        <div class="col"><i class="bi bi-star fs-1 text-warning"></i><h6>Top Quality</h6></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <h4>Contact Us</h4>
+      <input type="email" class="form-control mb-2" placeholder="Email">
+      <textarea class="form-control mb-2" placeholder="Message" rows="4"></textarea>
+      <button class="btn btn-gradient w-100">Send</button>
+    </div>
+
+    <div class="col-md-4">
+      <h4>Stay Connected</h4>
+      <a href="#"><i class="bi bi-facebook fs-2 text-primary me-2"></i></a>
+      <a href="#"><i class="bi bi-instagram fs-2 text-danger me-2"></i></a>
+      <a href="#"><i class="bi bi-twitter fs-2 text-info"></i></a>
+      <p class="mt-3">Follow us for updates, deals, and exclusive products.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white text-center py-3">
+    © 2026 AccessoryHub. All Rights Reserved.
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.card', {
+      distance: '60px',
+      duration: 900,
+      origin: 'bottom',
+      interval: 150
+    });
+
+    document.addEventListener("mousemove", e => {
+      const glow = document.getElementById("cursor-glow");
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
+    });
+  </script>
+
+</body>
+</html>

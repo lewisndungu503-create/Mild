@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AccessoryHub | Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* ================== CORE MOOD ================== */
+        body {
+            background:
+                radial-gradient(circle at 20% 10%, #ff0080 0%, transparent 40%),
+                radial-gradient(circle at 80% 20%, #00f0ff 0%, transparent 45%),
+                radial-gradient(circle at bottom, #1b1b3a, #05050f 70%);
+            color: #f1f1f1;
+            overflow-x: hidden;
+        }
+
+        img {
+            object-fit: cover
+        }
+
+        /* ================== GLASS ================== */
+        .glass {
+            background: rgba(255, 255, 255, .08);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        /* ================== TEXT ================== */
+        .accent {
+            color: #ffdd57
+        }
+
+        .soft {
+            color: #bdbde6
+        }
+
+        /* ================== TAGS ================== */
+        .tag {
+            padding: .4rem .9rem;
+            border-radius: 50px;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        .hot {
+            background: #ff004c
+        }
+
+        .new {
+            background: #00f0ff;
+            color: #000
+        }
+
+        /* ================== BENTO ================== */
+        .bento {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-auto-rows: 260px;
+            gap: 1.2rem;
+        }
+
+        .bento div {
+            border-radius: 26px;
+            position: relative;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .bento div:hover {
+            transform: scale(1.03)
+        }
+
+        .bento h4 {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+        }
+
+        .price {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #000;
+            padding: .35rem .8rem;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        /* ================== GLOW ================== */
+        .glow:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, .35);
+        }
+
+        /* ================== SCROLL ANIM ================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================== SHELF ================== */
+        .shelf {
+            border-bottom: 4px dashed rgba(255, 255, 255, .4);
+            padding-bottom: 20px;
+        }
+
+        .shelf img {
+            transition: .3s;
+        }
+
+        .shelf img:hover {
+            transform: translateY(-15px) scale(1.08);
+        }
+
+        /* ================== TYPO ================== */
+        .huge {
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            letter-spacing: -5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-dark py-3 navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold">AccessoryHub</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="tips.html">Tips</a></li>
+            </ul>
+            <span class="tag hot">IMMERSIVE MODE</span>
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="container py-5 reveal">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h1 class="display-2 fw-bold">
+                    Wear emotion.<br>
+                    <span class="accent">Scroll desire.</span>
+                </h1>
+                <p class="lead soft">
+                    Color slows time.
+                    Motion creates memory.
+                </p>
+                <span class="tag new">NEW SEASON</span>
+            </div>
+            <div class="col-md-5">
+                <div class="glass p-4 glow">
+                    <img src="images/classicwatch.jpeg" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1 WATCH BENTO -->
+    <section class="container py-5 reveal">
+        <div class="glass p-4">
+            <h3 class="fw-bold mb-4">⌚ Time isn’t neutral</h3>
+            <div class="bento">
+                <div style="background:url('images/luxurywatch.png') center/cover">
+                    <span class="price mb-5">$120</span>
+                    <h4>Gold Edge</h4>
+                </div>
+                <div style="background:url('images/smartwatch.jfif') center/cover">
+                    <span class="price">$150</span>
+                    <h4>Digital Pulse</h4>
+                </div>
+                <div style="background:url('images/leatherwatch.png ') center/cover">
+                    <span class="price">$90</span>
+                    <h4>Leather Core</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2 BAGS -->
+    <section class="container-fluid py-5 reveal" style="background:linear-gradient(135deg,#ff512f,#dd2476)">
+        <div class="container">
+            <h3 class="fw-bold mb-4">👜 Carry identity</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <img src="images/leatherbag.png" class="img-fluid rounded glow">
+                    <p>$95 Leather Tote</p>
+                    <button class="btn btn-success w-100">Add to Cart</button><br><br>
+                    <img src="images/bag1.jfif" alt="" class="img-fluid rounded glow" height="50%">
+                    <p>$80 Classic Bags</p>
+                    <button class="btn btn-success w-100">Add to Cart</button>
+                </div>
+                <div class="col-md-8">
+                    <img src="images/travelbackback.png" class="img-fluid rounded glow">
+                    <p>$120 Travel Bag</p>
+                    <button class="btn btn-success w-70">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 SUNGLASSES -->
+    <section class="container-fluid py-5 reveal" style="background:linear-gradient(135deg,#00c6ff,#0072ff)">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4">🕶 Bend light</h3>
+            <div class="row align-items-end">
+                <div class="col"><img src="images/glasses1.jfif" class="img-fluid rounded">
+                    <p>$45 classic sunglass </p>
+                    <button class="btn btn-success w-100">Add to Cart</button><br><br>
+                </div>
+                <div class="col"><img src="images/glasses2.jfif" class="img-fluid rounded">
+                    <p>$55 Stylish glasses</p>
+                    <button class="btn btn-success w-100">Add to Cart</button><br><br>
+                </div>
+                <div class="col"><img src="images/glasses3.jfif" class="img-fluid rounded">
+                    <p>$60 Party glasses</p>
+                    <button class="btn btn-success w-100">Add to Cart</button><br><br>
+                </div>
+                <div class="col"><img src="images/glasses6.jpeg" height="70%" class="img-fluid rounded">
+                    <p>$50 rounded glasses</p>
+                    <button class="btn btn-success w-100">Add to Cart</button><br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 JEWELRY -->
+    <section class="container py-5 reveal">
+        <div class="glass p-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="fw-bold">💍 Night objects</h2>
+                    <p class="soft">Glow after sunset.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/neck5.jpeg" class="img-fluid rounded glow h-8">
+                    <p>$150 Gold Necklace</p>
+                    <button class="btn btn-success w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 OTHERS -->
+    <section class="container py-5 reveal">
+        <h3 class="fw-bold mb-4">👔 More To Love</h3>
+        <div class="row shelf text-center">
+            <div class="col"><img src="images/scarf.jpeg" height="120" width="120">
+                <p>$40 Neck scarf</p>
+                <button class="btn btn-success w-100">Add to Cart</button>
+            </div>
+            <div class="col"><img src="images/tie.jpeg" height="120">
+                <p>$35 Pin tie </p>
+                <button class="btn btn-success w-100">Add to Cart</button>
+            </div>
+            <div class="col"><img src="images/clips.jpeg" height="120">
+                <p>$55 Hair clips</p>
+                <button class="btn btn-success w-100">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6 HATS TYPO -->
+    <section class="container-fluid py-5 reveal" style="background:linear-gradient(135deg,#11998e,#38ef7d)">
+        <div class="container text-center">
+            <div class="huge">HATS</div>
+            <p class="lead">Mood > weather</p>
+            <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee" class="img-fluid rounded glow mt-3"
+                width="420">
+            <p>$35 American cap</p>
+            <a href="#" class="btn btn-dark btn-sm"> More ></a><br><br>
+            <button class="btn btn-dark w-70">Add to Cart</button>
+        </div>
+    </section>
+    <!-- 7 QUALITY GUARANTEE -->
+    <section class="bg-dark text-white text-center py-4">
+        <h5 class="mb-0">✔ Quality Guaranteed &nbsp; ✔ Secure Payments &nbsp; ✔ Fast Delivery</h5>
+    </section>
+    <!-- 8 ABOUT & CONTACT -->
+    <section class="row bg-dark text-light p-5">
+        <div class="col-md-4">
+            <h4>About Us</h4>
+            <p>AccessoryHub is a trusted company offering premium-quality accessories at affordable prices. We deliver
+                nationwide with style.</p>
+            <div class="row text-center mt-3">
+                <div class="col"><i class="bi bi-truck fs-1 text-warning"></i>
+                    <h6>Fast Delivery</h6>
+                </div>
+                <div class="col"><i class="bi bi-shield-check fs-1 text-warning"></i>
+                    <h6>Secure Payment</h6>
+                </div>
+                <div class="col"><i class="bi bi-star fs-1 text-warning"></i>
+                    <h6>Top Quality</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h4>Contact Us</h4>
+            <form>
+                <input type="email" class="form-control mb-2" placeholder="Email">
+                <textarea class="form-control mb-2" placeholder="Message" rows="4"></textarea>
+                <button class="btn btn-gradient w-100">Send</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h4>Stay Connected</h4>
+            <a href="#"><i class="bi bi-facebook fs-2 text-primary me-2"></i></a>
+            <a href="#"><i class="bi bi-instagram fs-2 text-danger me-2"></i></a>
+            <a href="#"><i class="bi bi-twitter fs-2 text-info"></i></a>
+            <p class="mt-3">Follow us for updates, deals, and exclusive products.</p>
+        </div>
+    </section>
+
+    <!-- 9 FOOTER -->
+    <footer class="text-center p-3">
+        © 2026 AccessoryHub
+    </footer>
+
+    <script>
+        /* SCROLL REVEAL */
+        const reveals = document.querySelectorAll('.reveal');
+        window.addEventListener('scroll', () => {
+            reveals.forEach(r => {
+                const top = r.getBoundingClientRect().top;
+                if (top < window.innerHeight - 80) r.classList.add('active');
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
